@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="Style/AdminPanel/AdminPanelCss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Admin panel</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>       
+        <div class="p_leftside">
+            <div class="p_HeadText">Admin panel</div>
+            <div id="Menu">
+                <ul>
+                    <li>
+                        <a href="Default.aspx"><i class="fa fa-home" style="padding:10px 18px; font-size:20px; color:gold"></i>Ana səhifə</a>
+                    </li>
+                    <li>
+                        <a href="Pages.aspx"><i class="fa fa-columns" style="padding:10px 17px; font-size:20px; color:limegreen"></i>Səhifələr</a>
+                    </li>
+                    <li>
+                        <a href="Users.aspx"><i class="fa fa-users" style="padding:10px 15px; font-size:20px; color:darkorange"></i>Şəxslər</a>
+                    </li>
+                    <li>
+                        <a href="Database.aspx"><i class="fa fa-database" style="padding:10px 17px; font-size:20px; color:mediumslateblue"></i>Database</a>
+                    </li>
+                    <li onclick="CixisBtn()">
+                        <i class="fa fa-sign-out" style="padding:10px 16px; font-size:20px; color:red"></i>Çıxış
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="signoutPanel">
+            <div class="panel">
+                <div class="SoutHeadText">
+                    <i class="fa fa-warning" style="position:absolute; font-size:35px;padding:8px;left:20px; top:0;"></i>
+                    Xəbərdarlıq
+                </div>
+                <div class="TextArea">
+                    Admin panelindən çıxış etmək istədiyinizdən əminsiniz?
+                </div>
+                <div style="float:left; background-color:gray; width:100%; display:flex">
+                    <asp:Button ID="YesBtn" runat="server" CssClass="soutBtns" Text="Bəli" BackColor="#ff5050" />
+                    <div class="soutBtns" style="background-color:limegreen" onclick="NoBtn()" >Xeyr</div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">       
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+<script src="Scripts/AdminPanel/AdminPanelJS1.js"></script>
